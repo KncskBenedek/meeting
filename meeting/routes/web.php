@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 //
 Route::get('/meeting/{id}', [MeetingController::class, 'show']);
-Route::update('/meeting/{id}', [MeetingController::class, 'edit']);
+Route::put('/meeting/{id}', [MeetingController::class, 'edit']);
 Route::post('/meeting/new', [MeetingController::class, 'new']);
 Route::delete('/meeting/delete/{id}', [MeetingController::class, 'delete']);
 

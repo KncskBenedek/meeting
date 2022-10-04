@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Meeting extends Model
 {
     use HasFactory;
-
+    public $primaryKey = "meeting_id";
     public $timeStamps = false;
     protected $fillable = [
         'date',
