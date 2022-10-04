@@ -15,19 +15,20 @@ class CreateAppliesTable extends Migration
     public function up()
     {
         Schema::create('applies', function (Blueprint $table) {
-            $table->foreignId("meeting_id")->references("meeting_id")->on("meetings");
-            $table->foreignId("user_id")->references("user_id")->on("meetings");
-           $table->integer("user_id")->primary();
+            $table->foreignId("meeting")->references("meeting_id")->on("meetings");
+            $table->foreignId("user")->references("user_id")->on("users");
            $table->string("name");
-           $table->primary(['meeting_id', 'user_id']);
+           $table->timestamps();
+           $table->primary(['meeting', 'user']);
+           
         });
         //Required::create(['piece'=>1,'material'=>1,'pcs'=>2]);
-        Apply::create(['mmeting_id'=> 1,"user_id"=> 1,"name"=> "?"]);
-        Apply::create(['mmeting_id'=> 1,"user_id"=> 2,"name"=> "?"]);
-        Apply::create(['mmeting_id'=> 1,"user_id"=> 3,"name"=> "?"]);
-        Apply::create(['mmeting_id'=> 2,"user_id"=> 3,"name"=> "?"]);
-        Apply::create(['mmeting_id'=> 3,"user_id"=> 3,"name"=> "?"]);
-        Apply::create(['mmeting_id'=> 3,"user_id"=> 2,"name"=> "?"]);
+        Apply::create(['meeting'=> 1,"user"=> 1,"name"=> "a"]);
+        Apply::create(['meeting'=> 1,"user"=> 2,"name"=> "a"]);
+        Apply::create(['meeting'=> 1,"user"=> 3,"name"=> "a"]);
+        Apply::create(['meeting'=> 2,"user"=> 3,"name"=> "a"]);
+        Apply::create(['meeting'=> 3,"user"=> 3,"name"=> "a"]);
+        Apply::create(['meeting'=> 3,"user"=> 2,"name"=> "a"]);
     }
 
     /**

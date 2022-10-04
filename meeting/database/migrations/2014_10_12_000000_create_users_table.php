@@ -18,7 +18,11 @@ class CreateUsersTable extends Migration
             $table->id("user_id");
             $table->string('name');
             $table->string('email')->unique();
-            
+           
+          
+        
+            $table->timestamps();
+
         });
         //Required::create(['piece'=>1,'material'=>1,'pcs'=>2]);
         User::create(['name'=> 'Undok Sára', 'email'=>'asd@asd.com']);

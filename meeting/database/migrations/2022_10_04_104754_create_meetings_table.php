@@ -19,7 +19,8 @@ class CreateMeetingsTable extends Migration
             $table->date("date");
             $table->string("location");
             $table->integer("max_number");
-           
+            $table->timestamps();
+
         });
         //Required::create(['piece'=>1,'material'=>1,'pcs'=>2]);
         Meeting::create(['date'=>"2022-01-01", "location"=>"loc", "max_number"=> 10]);

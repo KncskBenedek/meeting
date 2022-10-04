@@ -10,8 +10,8 @@ class Apply extends Model
     use HasFactory;
     public $timeStamps = false;
     protected $fillable = [
-        'meeting_id',
-        'user_id',
+        'meeting',
+        'user',
         'name'
     ];
 }
