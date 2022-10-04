@@ -29,4 +29,4 @@ Route::delete('/meeting/delete/{id}', [MeetingController::class, 'delete']);
 
 Route::get('/meeting/view/list', [MeetingController::class, 'listView']);
 Route::get('/meeting/view/{id}', [MeetingController::class, 'editView']);
-Route::get('/meeting/view/new', [MeetingController::class, 'newView']);
+Route::get('/view/new', [MeetingController::class, 'newView']);
