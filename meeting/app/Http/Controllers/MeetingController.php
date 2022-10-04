@@ -11,14 +11,17 @@ class MeetingController extends Controller
     public function show($id){
         $meeting = response()->json(Meeting::find($id));
     }
-    public function edit(){
+    public function edit(Response $response, $id){
 
     }
-    public function new(){
+    public function new(Response $response){
 
+    }
+    public function delete($id){
+        
     }
     public function listView(){
-
+        
     }
     public function editView($id){
 

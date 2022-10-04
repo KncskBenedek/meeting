@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\MeetingController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//
+Route::get('/meeting/{id}', [MeetingController::class, 'show']);
+Route::update('/meeting/{id}', [MeetingController::class, 'edit']);
+Route::post('/meeting/new', [MeetingController::class, 'new']);
+Route::delete('/meeting/delete/{id}', [MeetingController::class, 'delete']);
+
+
+Route::get('/meeting/view/list', [MeetingController::class, 'listView']);
+Route::get('/meeting/view/{id}', [MeetingController::class, 'editView']);
+Route::get('/meeting/view/new', [MeetingController::class, 'newView']);
